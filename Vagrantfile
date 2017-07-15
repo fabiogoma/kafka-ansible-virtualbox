@@ -3,7 +3,6 @@ kafka_boxes = %w(kafka1 kafka2 kafka3)
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'centos/7'
-  # config.vm.box_version = '1703.01'
   config.vm.network 'private_network', :type => 'dhcp', :name => 'vboxnet0', :adapter => 2
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.provider 'virtualbox' do |vb|
