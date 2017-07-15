@@ -1,0 +1,9 @@
+---
+- name: Generate kafka systemd service configuration
+  copy:
+    src: kafka.service
+    dest: /etc/systemd/system/kafka.service
+    owner: root
+    group: root
+    mode: 0644
+  notify: Reload systemd configuration and restart kafka service

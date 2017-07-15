@@ -1,0 +1,8 @@
+---
+- name: Set SELinux to permissive
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Disable firewalld
+  service: name=firewalld enabled=no state=stopped

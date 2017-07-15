@@ -1,0 +1,24 @@
+---
+- name: Copy zookeeper installer to the server
+  copy:
+    src: zookeeper-{{zookeeper_version}}.tar.gz
+    dest: /opt/zookeeper-{{zookeeper_version}}.tar.gz
+    owner: zookeeper
+    group: zookeeper
+    mode: 0644
+
+- name: Unpack zookeeper tarball file
+  unarchive:
+    src: /opt/zookeeper-{{zookeeper_version}}.tar.gz
+    dest: /opt/
+    owner: zookeeper
+    group: zookeeper
+    remote_src: true
+
+- name: Create link pointing to the current installation
+  file:
+    src: /opt/zookeeper-{{zookeeper_version}}
+    dest: /opt/zookeeper
+    owner: zookeeper
+    group: zookeeper
+    state: link

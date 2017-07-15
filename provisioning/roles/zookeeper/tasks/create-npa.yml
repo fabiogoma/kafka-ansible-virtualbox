@@ -1,0 +1,12 @@
+---
+- name: Create zookeeper group
+  group: 
+    name: zookeeper
+    state: present
+
+- name: Create zookeeper user
+  user: 
+    name: zookeeper
+    group: zookeeper
+    comment: "Zookeeper default user"
+    shell: /bin/bash

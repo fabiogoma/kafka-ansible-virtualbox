@@ -1,0 +1,12 @@
+---
+- name: Generate zookeeper systemd service configuration from template
+  template:
+    src: zookeeper.service.j2
+    dest: /etc/systemd/system/zookeeper.service
+    owner: root
+    group: root
+    mode: 0644
+  vars:
+    zookeeper_data_dir: "{{ data_dir }}"
+    zookeeper_server_list: "{{ zookeeper_server_list }}"
+  notify: Reload systemd configuration and restart zookeeper service

@@ -1,0 +1,24 @@
+---
+- name: Copy kafka installer to the server
+  copy:
+    src: kafka_{{scala_version}}-{{kafka_version}}.tgz
+    dest: /opt/kafka_{{scala_version}}-{{kafka_version}}.tgz
+    owner: kafka
+    group: kafka
+    mode: 0644
+
+- name: Unpack kafka tarball file
+  unarchive:
+    src: /opt/kafka_{{scala_version}}-{{kafka_version}}.tgz
+    dest: /opt/
+    owner: kafka
+    group: kafka
+    remote_src: true
+
+- name: Create link pointing to the current installation
+  file:
+    src: /opt/kafka_{{scala_version}}-{{kafka_version}}
+    dest: /opt/kafka
+    owner: kafka
+    group: kafka
+    state: link

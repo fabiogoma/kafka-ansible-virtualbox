@@ -1,0 +1,5 @@
+---
+- include: create-npa.yml
+- include: install-zookeeper.yml
+- include: create-configuration.yml
+- include: manage-service.yml

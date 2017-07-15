@@ -1,0 +1,4 @@
+---
+kafka_version: 0.10.2.1
+scala_version: 2.12
+data_dir: /var/lib/kafka

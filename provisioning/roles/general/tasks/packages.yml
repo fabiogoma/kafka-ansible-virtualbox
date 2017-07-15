@@ -1,0 +1,30 @@
+---
+- name: Install EPEL repo
+  yum: name=epel-release state=present
+
+- name: Install basic packages
+  yum: name={{ item }} state=present
+  with_items:
+    - nss-mdns
+    - net-tools
+    - telnet
+    - tcpdump
+    - lsof
+    - strace
+    - wget
+    - mlocate
+
+- name: Install Java
+  yum: name={{ item }} state=present
+  with_items:
+    - java-1.8.0-openjdk-devel
+    - java-1.8.0-openjdk
+
+- name: Configure mDNS
+  lineinfile:
+    path: /etc/avahi/avahi-daemon.conf
+    regexp: '^#allow-interfaces=eth0'
+    line: 'allow-interfaces=eth1'
+    state: present
+    backrefs: yes
+  notify: Restart mDNS service 

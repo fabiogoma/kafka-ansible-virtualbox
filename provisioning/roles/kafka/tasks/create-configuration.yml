@@ -1,0 +1,22 @@
+---
+- name: Create data directory
+  file:
+    path: "{{ data_dir }}/kafka-logs"
+    state: directory
+    owner: kafka
+    group: kafka
+    recurse: true
+    mode: 0755
+
+- name: Generate kafka configuration from template
+  template:
+    src: server.properties.j2
+    dest: /opt/kafka/config/server.properties
+    owner: kafka
+    group: kafka
+    mode: 0644
+  vars:
+    kafka_data_dir: "{{ data_dir }}"
+    zookeeper_server_list: "{{ zookeeper_server_list }}"
+    broker_id: "{{ server_id }}"
+    hostname: "{{ inventory_hostname }}"

@@ -1,0 +1,29 @@
+---
+- name: Create data directory
+  file:
+    path: "{{ data_dir }}"
+    state: directory
+    owner: zookeeper
+    group: zookeeper
+    mode: 0755
+
+- name: Generate zookeeper configuration from template
+  template:
+    src: zoo.cfg.j2
+    dest: /opt/zookeeper/conf/zoo.cfg
+    owner: zookeeper
+    group: zookeeper
+    mode: 0644
+  vars:
+    zookeeper_data_dir: "{{ data_dir }}"
+    zookeeper_server_list: "{{ zookeeper_server_list }}"
+
+- name: Generate zookeeper ID file
+  lineinfile:
+    owner: zookeeper
+    group: zookeeper
+    mode: 0644
+    path: "{{ data_dir }}/myid"
+    line: "{{ server_id }}"
+    create: true
+    
