@@ -7,6 +7,15 @@
     group: zookeeper
     mode: 0755
 
+- name: Generate zookeeper ID file
+  lineinfile:
+    owner: zookeeper
+    group: zookeeper
+    mode: 0644
+    path: "{{ data_dir }}/myid"
+    line: "{{ server_id }}"
+    create: true
+
 - name: Generate zookeeper configuration from template
   template:
     src: zoo.cfg.j2
@@ -17,13 +26,5 @@
   vars:
     zookeeper_data_dir: "{{ data_dir }}"
     zookeeper_server_list: "{{ zookeeper_server_list }}"
-
-- name: Generate zookeeper ID file
-  lineinfile:
-    owner: zookeeper
-    group: zookeeper
-    mode: 0644
-    path: "{{ data_dir }}/myid"
-    line: "{{ server_id }}"
-    create: true
+  notify: Reload systemd configuration and restart zookeeper service
     

@@ -20,3 +20,4 @@
     zookeeper_server_list: "{{ zookeeper_server_list }}"
     broker_id: "{{ server_id }}"
     hostname: "{{ inventory_hostname }}"
+  notify: Reload systemd configuration and restart kafka service

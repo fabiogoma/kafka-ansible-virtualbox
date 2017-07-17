@@ -3,6 +3,7 @@
   group: 
     name: zookeeper
     state: present
+    system: yes
 
 - name: Create zookeeper user
   user: 
@@ -10,3 +11,4 @@
     group: zookeeper
     comment: "Zookeeper default user"
     shell: /bin/bash
+    system: yes

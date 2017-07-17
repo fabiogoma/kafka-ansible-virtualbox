@@ -8,4 +8,3 @@
     mode: 0644
   vars:
     zookeeper_data_dir: "{{ data_dir }}"
-  notify: Reload systemd configuration and restart zookeeper service
