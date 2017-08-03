@@ -6,6 +6,6 @@
     - general
     - kafka
 
-#  tasks:
-#    - name: Show variables from Vagrantfile
-#      debug: msg="This is the list {{ zookeeper_server_list }}, this server id {{ server_id }}"
+  tasks:
+    - name: Show variables from Vagrantfile
+      debug: msg="This is the list {{ zookeeper_server_list }}, this server id {{ server_id }}"
