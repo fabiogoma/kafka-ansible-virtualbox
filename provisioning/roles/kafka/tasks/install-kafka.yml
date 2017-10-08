@@ -1,17 +1,11 @@
 ---
 - name: Unpack kafka tarball file
   unarchive:
-    src: kafka_{{scala_version}}-{{kafka_version}}.tgz
-    dest: /opt/
-    creates: /opt/kafka_{{scala_version}}-{{kafka_version}}
-    owner: kafka
-    group: kafka
-    keep_newer: yes
-
-- name: Create link pointing to the current installation
-  file:
-    src: /opt/kafka_{{scala_version}}-{{kafka_version}}
+    src: "{{ kafka_binaries }}"
     dest: /opt/kafka
     owner: kafka
     group: kafka
-    state: link
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+    keep_newer: yes
+
