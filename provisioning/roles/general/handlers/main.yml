@@ -1,2 +1,2 @@
 ---
-- include: restart-mdns.yml
+- import_tasks: restart-mdns.yml

@@ -1,2 +1,2 @@
 ---
-- include: restart-kafka.yml
+- import_tasks: restart-kafka.yml

@@ -1,5 +1,5 @@
 ---
-- include: create-npa.yml
-- include: install-kafka.yml
-- include: manage-service.yml
-- include: create-configuration.yml
+- import_tasks: create-npa.yml
+- import_tasks: install-kafka.yml
+- import_tasks: manage-service.yml
+- import_tasks: create-configuration.yml

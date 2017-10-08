@@ -1,2 +1,2 @@
 ---
-- include: restart-zookeeper.yml
+- import_tasks: restart-zookeeper.yml

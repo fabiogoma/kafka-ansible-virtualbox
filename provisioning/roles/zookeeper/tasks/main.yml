@@ -1,6 +1,6 @@
 ---
-- include: create-npa.yml
-- include: install-zookeeper.yml
-- include: manage-service.yml
-- include: create-configuration.yml
+- import_tasks: create-npa.yml
+- import_tasks: install-zookeeper.yml
+- import_tasks: manage-service.yml
+- import_tasks: create-configuration.yml
 
