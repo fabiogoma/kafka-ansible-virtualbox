@@ -1,5 +1,5 @@
 zookeeper_boxes = %w(zookeeper1 zookeeper2 zookeeper3)
-kafka_boxes = %w(kafka1 kafka2 kafka3 kafka4)
+kafka_boxes = %w(kafka1 kafka2 kafka3)
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'centos/7'
