@@ -1,7 +1,7 @@
 # Did I hear web scale message processing?
-Usually it takes to long to prepare the environment every time we need to study something related to Kafka, basically because if you want to run tests in a environment with the minimum requirements for HA you need at least 3 servers for Zookeeper and 3 servers for kafka, all to ensure HA and avoid split brain.
+Usually it takes to long to prepare the environment every time we need to study something related to [Kafka](https://kafka.apache.org/), basically because if you want to run tests in a environment with the minimum requirements for high availability (HA) you need at least 3 servers for [zookeeper](https://zookeeper.apache.org/) and 3 servers for [kafka](https://kafka.apache.org/), all to ensure HA and avoid split brain.
 
-If you are new to Kafka, I strongly recommend going through [kafka documentation](https://kafka.apache.org/documentation/), you can also take a look in [this course](https://www.youtube.com/watch?v=gg-VwXSRnmg&list=PLkz1SCf5iB4enAR00Z46JwY9GGkaS2NON), which is basic but extremely helpful.
+If you are new to [kafka](https://kafka.apache.org/), I strongly recommend going through [kafka documentation](https://kafka.apache.org/documentation/), you can also take a look in [this course](https://www.youtube.com/watch?v=gg-VwXSRnmg&list=PLkz1SCf5iB4enAR00Z46JwY9GGkaS2NON), which is basic but extremely helpful.
 
 To make it pratical, I also prepared the [zookeeper](https://zookeeper.apache.org/) and [kafka](https://kafka.apache.org/) to be both managed by [systemd](https://www.freedesktop.org/wiki/Software/systemd/), which means you can manage the services like this:
 ```bash
@@ -28,11 +28,11 @@ I'm assuming that you are an experienced GNU/Linux user, and that you have [ansi
 </p>
 
 # Features
-* Create and boot VirtualBox instances
-* Provision the hosts with all necessary basic tools
-* Provision a cluster for [zookeeper](https://zookeeper.apache.org/)
-* Provision a cluster for [kafka](https://kafka.apache.org/)
-* Automatic SSH key generation to access your hosts through vagrant  
+* Create and boot [virtualbox](https://www.virtualbox.org/) instances
+* Provisioning of hosts with all necessary basic tools
+* Provisioning of a cluster for [zookeeper](https://zookeeper.apache.org/)
+* Provisioning of a cluster for [kafka](https://kafka.apache.org/)
+* SSH key generation to access your hosts through vagrant commands  
 :scream:
 
 # Topology
