@@ -1,4 +1,12 @@
 ---
+- name: Create kafka default folder
+  file:
+    path: /opt/kafka
+    owner: kafka
+    group: kafka
+    state: directory
+    mode: 0750
+
 - name: Unpack kafka tarball file
   unarchive:
     src: "{{ kafka_binaries }}"
