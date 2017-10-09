@@ -1,5 +1,5 @@
 # Did I hear web scale message processing?
-Usually it takes to long to prepare the environment every time we need to study something related to [Kafka](https://kafka.apache.org/), basically because if you want to run tests in a environment with the minimum requirements for high availability (HA) you need at least 3 servers for [zookeeper](https://zookeeper.apache.org/) and 3 servers for [kafka](https://kafka.apache.org/), all to ensure HA and avoid split brain.
+Usually it takes too long to prepare the environment every time we need to study something related to [Kafka](https://kafka.apache.org/), basically because if you want to run tests in a environment with the minimum requirements for high availability (HA) you need at least 3 servers for [zookeeper](https://zookeeper.apache.org/) and 3 servers for [kafka](https://kafka.apache.org/), all to ensure HA and avoid split brain.
 
 If you are new to [kafka](https://kafka.apache.org/), I strongly recommend going through [kafka documentation](https://kafka.apache.org/documentation/), you can also take a look in [this course](https://www.youtube.com/watch?v=gg-VwXSRnmg&list=PLkz1SCf5iB4enAR00Z46JwY9GGkaS2NON), which is basic but extremely helpful.
 
