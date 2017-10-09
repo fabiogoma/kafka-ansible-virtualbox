@@ -62,15 +62,15 @@ In a few minutes you should have have access to a cluster containing 3 hosts for
 
 As soon as you have your topology up and running, download the [kafka binaries](http://apache.mirror.triple-it.nl/kafka/0.10.2.1/kafka_2.12-0.10.2.1.tgz) to your desktop. 
 
-You need kafka binaries on your host to execute a basic test and make sure the topology is working so expand the tarball
+You need kafka binaries on your host to execute a basic test and make sure the topology is working so the tarball need to be exploded to be used.
 
 ```bash
 $ wget http://apache.mirror.triple-it.nl/kafka/0.10.2.1/kafka_2.12-0.10.2.1.tgz
 $ tar -xvzf kafka_2.12-0.10.2.1.tgz
-$ cd kafka_2.12-0.10.2.1
+$ cd kafka_2.12-0.10.2.1/bin
 ```
 
-From now on we're gonna use 2 terminals, I recommend tilix (former terminix) to make it more productive
+From now on we're gonna use 2 terminals, I recommend [tilix](https://github.com/gnunn1/tilix) (former terminix) to make it more productive
 
 <p align="center">
   <img src="images/kafka-test.png">
