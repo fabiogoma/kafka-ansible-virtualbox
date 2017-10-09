@@ -40,6 +40,58 @@ I'm assuming that you are an experienced GNU/Linux user, and that you have [ansi
   <img src="images/topology.png">
 </p>
 
+# Playbook structure
+```bash
+$ tree provisioning/
+provisioning/
+├── kafka-playbook.yml
+├── roles
+│   ├── general
+│   │   ├── handlers
+│   │   │   ├── main.yml
+│   │   │   └── restart-mdns.yml
+│   │   └── tasks
+│   │       ├── main.yml
+│   │       ├── packages.yml
+│   │       └── security.yml
+│   ├── kafka
+│   │   ├── files
+│   │   │   └── kafka.service
+│   │   ├── handlers
+│   │   │   ├── main.yml
+│   │   │   └── restart-kafka.yml
+│   │   ├── tasks
+│   │   │   ├── create-configuration.yml
+│   │   │   ├── create-npa.yml
+│   │   │   ├── install-kafka.yml
+│   │   │   ├── main.yml
+│   │   │   └── manage-service.yml
+│   │   ├── templates
+│   │   │   └── server.properties.j2
+│   │   └── vars
+│   │       └── main.yml
+│   └── zookeeper
+│       ├── files
+│       │   └── zookeeper-3.4.10.tar.gz
+│       ├── handlers
+│       │   ├── main.yml
+│       │   └── restart-zookeeper.yml
+│       ├── tasks
+│       │   ├── create-configuration.yml
+│       │   ├── create-npa.yml
+│       │   ├── install-zookeeper.yml
+│       │   ├── main.yml
+│       │   └── manage-service.yml
+│       ├── templates
+│       │   ├── zoo.cfg.j2
+│       │   └── zookeeper.service.j2
+│       └── vars
+│           └── main.yml
+└── zookeeper-playbook.yml
+
+16 directories, 28 files
+```
+
 # Bringing up your own environment
 After clone my repo, navigate to the project folder and update the lines 3 and 4 from [Vagrantfile](Vagrantfile) to match your main network (the one with internet access) then, use vagrant to provision your own environment.  
 
