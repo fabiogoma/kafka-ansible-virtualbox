@@ -40,15 +40,25 @@ I'm assuming that you are an experienced GNU/Linux user, and that you have [ansi
   <img src="images/topology.png">
 </p>
 
-# Usage
-After install [ansible](https://www.ansible.com/), [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/) on your [fedora](https://getfedora.org/), you can clone this repo and bring up the environment.
+# Bringing up your own environment
+After clone my repo, navigate to the project folder and update the lines 3 and 4 from [Vagrantfile](Vagrantfile) to match your main network (the one with internet access) then, use vagrant to provision your own environment.  
+
 ```bash
 $ git clone https://github.com/fabiogoma/kafka-ansible-virtualbox.git
 $ cd kafka-ansible-virtualbox
+$ vi Vagrantfile
+```
+```ruby
+...
+  #Replace eno1 with the apropriate name for your host main interface
+  config.vm.network 'public_network', bridge: "eno1"
+...
+```
+```bash
 $ vagrant up
 ```
 
-In a few minutes you'll have access to a cluster containing 3 hosts for zookeeper and 3 hosts for kafka, if you need more hosts you can change the host variables (zookeeper_boxes and kafka_boxes) on [Vagrantfile](Vagrantfile).
+In a few minutes you should have have access to a cluster containing 3 hosts for zookeeper and 3 hosts for kafka, if you need more hosts you can change the host variables (zookeeper_boxes and kafka_boxes) on [Vagrantfile](Vagrantfile).
 
 As soon as you have your topology up and running, download the [kafka binaries](http://apache.mirror.triple-it.nl/kafka/0.10.2.1/kafka_2.12-0.10.2.1.tgz) to your desktop. 
 
