@@ -14,6 +14,9 @@ $ sudo systemctl stop kafka
 $ sudo systemctl restart kafka
 ```
 
+# Before we start
+I'm assuming that you are an experienced linux user, and that you have [ansible](https://www.ansible.com/), [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/) installed on your machine. As a host, I use [fedora](https://getfedora.org/), but you can choose whatever GNU/Linux distro you prefer.
+
 # Tools on my desktop
 <p align="center">
   <img src="images/desktop-tools.png">
