@@ -153,4 +153,4 @@ Be careful with the sequence, because here it matters:
 ```
 Here, type some "Hello World" messages, hit enter and monitor the second terminal.
 
-:orange_book: **Keep in mind that this is my personal laboratory, you can prepare you're production environment following this steps, but make sure you know what you're doing.**
+:orange_book: **Keep in mind that this is my personal laboratory, you can prepare your production environment following this steps, but make sure you know what you're doing.**
